@@ -76,7 +76,11 @@ const ParentMode: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-20">
-      <div className="p-6">
+      <div className="fixed top-0 left-0 right-0 bg-primary-800/80 backdrop-blur-md p-4 z-10 border-b border-primary-600">
+        <h1 className="text-xl font-bold text-white text-center">VoltX</h1>
+      </div>
+      
+      <div className="p-6 pt-20">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-2xl font-bold text-white">Parent Mode</h1>
