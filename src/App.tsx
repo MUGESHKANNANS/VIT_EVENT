@@ -18,7 +18,7 @@ import ScheduleRides from './pages/ScheduleRides';
 import FamilySharing from './pages/FamilySharing';
 import ParentalControls from './pages/ParentalControls';
 import Payments from './pages/Payments';
-import SubscriptionPlans from './pages/SubscriptionPlans';
+import Marketplace from './pages/Marketplace';
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
           <Route path="/family-sharing" element={<FamilySharing />} />
           <Route path="/parental-controls" element={<ParentalControls />} />
           <Route path="/payments" element={<Payments />} />
-          <Route path="/subscription-plans" element={<SubscriptionPlans />} />
+          <Route path="/marketplace" element={<Marketplace />} />
         </Routes>
       </div>
     </Router>
