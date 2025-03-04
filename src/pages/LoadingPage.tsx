@@ -23,7 +23,7 @@ const LoadingPage: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="text-center"
       >
-        <h1 className="text-4xl font-bold mb-6 text-white">EV Bike Companion</h1>
+        <h1 className="text-4xl font-bold mb-6 text-white">VoltX</h1>
         
         <div className="mb-8">
           <BikeAnimation size={120} />
