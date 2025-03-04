@@ -46,7 +46,7 @@ const ParentMode: React.FC = () => {
       path: '/family-sharing'
     },
     {
-      title: 'Payments & Subscription',
+      title: 'Payments',
       description: 'Manage payment methods and subscription plans',
       icon: CreditCard,
       path: '/payments'
