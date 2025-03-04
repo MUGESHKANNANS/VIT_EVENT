@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Battery, Map, MapPin, Settings, Bell, Shield, Zap, CreditCard } from 'lucide-react';
+import { Battery, Map, MapPin, Settings, Bell, Shield, Zap, CreditCard, Store } from 'lucide-react';
 import NavBar from '../components/NavBar';
 import BikeAnimation from '../components/BikeAnimation';
 
@@ -28,6 +28,12 @@ const SelfMode: React.FC = () => {
       path: '/find-vehicle'
     },
     {
+      title: 'Marketplace',
+      description: 'Find and book battery stations for rental',
+      icon: Store,
+      path: '/marketplace'
+    },
+    {
       title: 'Performance Stats',
       description: 'View speed, distance, and riding statistics',
       icon: Zap,
@@ -46,8 +52,8 @@ const SelfMode: React.FC = () => {
       path: '/security-settings'
     },
     {
-      title: 'Payments & Subscription',
-      description: 'Manage payment methods and subscription plans',
+      title: 'Payments',
+      description: 'Manage payment methods and transaction history',
       icon: CreditCard,
       path: '/payments'
     },
