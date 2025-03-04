@@ -10,7 +10,7 @@ const Payments: React.FC = () => {
   const location = useLocation();
   const isParentMode = location.pathname.includes('parent');
   
-  const [activeTab, setActiveTab] = useState<'payment' | 'subscription' | 'history'>('payment');
+  const [activeTab, setActiveTab] = useState<'payment' | 'history'>('payment');
   const [showAddCard, setShowAddCard] = useState(false);
   
   // Dummy payment methods
@@ -24,10 +24,10 @@ const Payments: React.FC = () => {
   const transactions = [
     { 
       id: 1, 
-      type: 'subscription' as const, 
-      amount: '$9.99', 
+      type: 'charge' as const, 
+      amount: '$5.99', 
       date: 'Today, 10:30 AM', 
-      description: 'Monthly Premium Plan' 
+      description: 'Battery Rental - EV Power Hub' 
     },
     { 
       id: 2, 
@@ -64,7 +64,7 @@ const Payments: React.FC = () => {
       <div className="p-6">
         <h1 className="text-2xl font-bold mb-6 text-white">Payments</h1>
         
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 gap-4 mb-6">
           <motion.div
             whileTap={{ scale: 0.95 }}
             className={`p-4 rounded-lg text-center cursor-pointer ${
@@ -75,19 +75,7 @@ const Payments: React.FC = () => {
             onClick={() => setActiveTab('payment')}
           >
             <CreditCard size={20} className="mx-auto mb-1" />
-            <span className="text-sm">Payment</span>
-          </motion.div>
-          <motion.div
-            whileTap={{ scale: 0.95 }}
-            className={`p-4 rounded-lg text-center cursor-pointer ${
-              activeTab === 'subscription' 
-                ? 'bg-secondary-600 text-white' 
-                : 'bg-white/10 text-white/70'
-            }`}
-            onClick={() => setActiveTab('subscription')}
-          >
-            <Wallet size={20} className="mx-auto mb-1" />
-            <span className="text-sm">Subscription</span>
+            <span className="text-sm">Payment Methods</span>
           </motion.div>
           <motion.div
             whileTap={{ scale: 0.95 }}
@@ -99,7 +87,7 @@ const Payments: React.FC = () => {
             onClick={() => setActiveTab('history')}
           >
             <Receipt size={20} className="mx-auto mb-1" />
-            <span className="text-sm">History</span>
+            <span className="text-sm">Transaction History</span>
           </motion.div>
         </div>
         
@@ -220,85 +208,6 @@ const Payments: React.FC = () => {
               </div>
             </div>
           </>
-        )}
-        
-        {activeTab === 'subscription' && (
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 mb-6">
-            <div className="flex items-center mb-4">
-              <Wallet className="mr-2 text-secondary-300" size={20} />
-              <h2 className="text-lg font-semibold">Current Plan</h2>
-            </div>
-            
-            <div className="bg-secondary-600/30 rounded-lg p-4 mb-6 border border-secondary-500/50">
-              <div className="flex justify-between items-center">
-                <div>
-                  <h3 className="font-bold text-xl">Premium Plan</h3>
-                  <p className="text-white/70">Billed monthly</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl font-bold">$9.99</p>
-                  <p className="text-xs text-white/70">Next billing: June 15, 2025</p>
-                </div>
-              </div>
-              
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <h4 className="font-medium mb-2">Features included:</h4>
-                <ul className="space-y-1 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-secondary-300 mr-2">•</span>
-                    <span>Real-time tracking and notifications</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary-300 mr-2">•</span>
-                    <span>Advanced battery analytics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary-300 mr-2">•</span>
-                    <span>Family sharing (up to 5 members)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-secondary-300 mr-2">•</span>
-                    <span>Priority customer support</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="flex space-x-2 mt-4">
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-1 bg-white/10 text-white py-2 rounded-lg"
-                >
-                  Change Plan
-                </motion.button>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white/10 text-white py-2 px-4 rounded-lg"
-                >
-                  Cancel
-                </motion.button>
-              </div>
-            </div>
-            
-            <div className="flex items-center mb-4">
-              <Clock className="mr-2 text-secondary-300" size={20} />
-              <h2 className="text-lg font-semibold">Billing History</h2>
-            </div>
-            
-            <div className="space-y-1">
-              <div className="flex justify-between items-center py-2 border-b border-white/10">
-                <span>May 15, 2025</span>
-                <span>$9.99</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-white/10">
-                <span>April 15, 2025</span>
-                <span>$9.99</span>
-              </div>
-              <div className="flex justify-between items-center py-2">
-                <span>March 15, 2025</span>
-                <span>$9.99</span>
-              </div>
-            </div>
-          </div>
         )}
         
         {activeTab === 'history' && (
