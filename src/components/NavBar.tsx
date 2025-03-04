@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Home, Battery, Map, MapPin, ArrowLeft, CreditCard } from 'lucide-react';
+import { Home, Battery, Map, MapPin, ArrowLeft, CreditCard, Store } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface NavBarProps {
@@ -48,11 +48,11 @@ const NavBar: React.FC<NavBarProps> = ({ mode }) => {
               
               <motion.button
                 whileTap={{ scale: 0.9 }}
-                className={`flex flex-col items-center ${isActive('/trip-planner') ? 'text-secondary-300' : 'text-white/70'}`}
-                onClick={() => navigate('/trip-planner')}
+                className={`flex flex-col items-center ${isActive('/marketplace') ? 'text-secondary-300' : 'text-white/70'}`}
+                onClick={() => navigate('/marketplace')}
               >
-                <Map size={24} />
-                <span className="text-xs mt-1">Trip</span>
+                <Store size={24} />
+                <span className="text-xs mt-1">Market</span>
               </motion.button>
               
               <motion.button
