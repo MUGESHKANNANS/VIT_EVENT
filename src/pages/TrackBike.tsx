@@ -35,7 +35,7 @@ const TrackBike: React.FC = () => {
             <span className="text-sm">Navigate</span>
           </motion.button>
           
-          <motion.button
+{/*           <motion.button
             whileTap={{ scale: 0.95 }}
             className="bg-white/10 backdrop-blur-md rounded-lg p-4 flex flex-col items-center"
             onClick={() => window.open('tel:+1234567890', '_blank')}
@@ -51,7 +51,7 @@ const TrackBike: React.FC = () => {
           >
             <MessageSquare size={20} className="mb-2 text-secondary-300" />
             <span className="text-sm">Message</span>
-          </motion.button>
+          </motion.button> */}
         </div>
         
         {showMessage && (
