@@ -15,7 +15,7 @@ const ModeSelection: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
       >
-        <h1 className="text-3xl font-bold mb-2 text-center text-white">Welcome</h1>
+        <h1 className="text-3xl font-bold mb-2 text-center text-white">Welcome to VoltX</h1>
         <p className="text-center mb-8 text-white/80">Please select your mode</p>
         
         <div className="grid grid-cols-1 gap-6">
